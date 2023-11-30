@@ -12,8 +12,8 @@ public class ValidacoesStringTests
         //TODO: Corrigir a variável "texto" e "resultadoEsperado" da seção Arrange
 
         // Arrange
-        var texto = "a";
-        var resultadoEsperado = 0;
+        var texto = "avanade";
+        var resultadoEsperado = 7;
 
         // Act
         var resultado = _validacoes.RetornarQuantidadeCaracteres(texto);
@@ -50,7 +50,7 @@ public class ValidacoesStringTests
 
         // Assert
         //TODO: Corrigir o Assert.False com base no retorno da chamada ao método
-        Assert.False(true);
+        Assert.False(resultado);
     }
 
     //TODO: Corrigir a anotação [Fact]
@@ -66,6 +66,22 @@ public class ValidacoesStringTests
         var resultado = _validacoes.TextoTerminaCom(texto, textoProcurado);
 
         // Assert
+        Assert.True(resultado);
+    }
+    
+    // BONUS
+    [Fact]
+    public void TextoDeveConterAPalavraAvanadeNoTexto()
+    {
+        // Arrange
+        var texto = "Henrique irá trabalhar na avanade";
+        var textoProcurado = "avanade";
+
+        // Act
+        var resultado = _validacoes.ContemCaractere(texto, textoProcurado);
+
+        // Assert
+        //TODO: Corrigir o Assert.False com base no retorno da chamada ao método
         Assert.True(resultado);
     }
 }
